@@ -12,6 +12,9 @@ class FileController: ObservableObject {
     let manager = FileManager.default
     let userDirectory: URL?
     let JPEG_QUALITY = 0.8
+    var csvPath: URL? = nil
+    @Published var showAlert = false
+    var alertContent: String = "N/A"
     
     init() {
         guard let url = manager.urls(
@@ -65,12 +68,28 @@ class FileController: ObservableObject {
         
         if let url = userDirectory {
             let filename = generateNewFilename()
-            let csvPath = generatePath(filename, "csv")
+            csvPath = generatePath(filename, "csv")
             do {
-                try csvString.write(to: csvPath, atomically: true, encoding: .utf8)
+                try csvString.write(to: csvPath!, atomically: true, encoding: .utf8)
+                self.alertContent = "CSV file written successfully."
+                self.showAlert = true
             }
             catch {
-                print("Error creating csv file")
+//                self.alertContent = "Error writting CSV file."
+//                self.showAlert = false
+                print("Error writting CSV file.")
+            }
+        }
+    }
+    
+    func openCSV() {
+        if let url = csvPath {
+            print(url)
+            if let sharedUrl = URL(string: "shareddocuments://\(url.path)") {
+                print(UIApplication.shared.canOpenURL(sharedUrl))
+                if UIApplication.shared.canOpenURL(sharedUrl) {
+                    UIApplication.shared.open(sharedUrl, options: [:])
+                }
             }
         }
     }

@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var ocrData: Data?
     @EnvironmentObject private var fileController: FileController
     @EnvironmentObject private var client: HttpClient
+    
     var body: some View {
         NavigationView{
             VStack {
@@ -33,9 +34,13 @@ struct ContentView: View {
         .alert(isPresented: $client.showAlert) {
             Alert(
                 title: Text("Server error"),
-                message: Text(client.error),
+                message: Text(client.alertContent),
                 dismissButton: .default(Text("Got it!"))
             )
+        }
+        .alert("CSV file written successfully.", isPresented: $fileController.showAlert) {
+            Button("Dismiss", action: {})
+            Button("Open", action: {fileController.openCSV()}).keyboardShortcut(.defaultAction)
         }
     }
     

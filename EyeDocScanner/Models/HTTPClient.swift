@@ -10,7 +10,7 @@ import Foundation
 class HttpClient: ObservableObject {
     let url = URL(string: "http://172.20.10.3:8080")!
     @Published var showAlert = false
-    var error: String = "N/A"
+    var alertContent: String = "N/A"
     
     func sendRequest(jsonData: Data) async -> [[String: String]]? {
         var request = URLRequest(url: self.url)
@@ -21,7 +21,7 @@ class HttpClient: ObservableObject {
             let (data, response) = try await URLSession.shared.upload(for: request, from: jsonData)
             if let response = response as? HTTPURLResponse {
                 if response.statusCode == 480 {
-                    self.error = "Could not find a matching reader."
+                    self.alertContent = "Could not find a matching reader."
                     self.showAlert = true
                     return nil
                 }
@@ -31,13 +31,13 @@ class HttpClient: ObservableObject {
                 return structuredData
             }
             else {
-                self.error = "Could not parse the received data."
+                self.alertContent = "Could not parse the received data."
                 self.showAlert = true
                 return nil
             }
         }
         catch {
-            self.error = "Request to server failed."
+            self.alertContent = "Request to server failed."
             self.showAlert = true
             return nil
         }
@@ -45,7 +45,6 @@ class HttpClient: ObservableObject {
     
     func parseResponse(data: Data) -> [[String: String]]? {
         do {
-            print(data)
             let jsonArray = try JSONSerialization.jsonObject(with: data, options: []) as! [[String: String]]
             return jsonArray
         } catch {

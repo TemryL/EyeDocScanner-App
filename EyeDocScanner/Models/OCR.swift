@@ -64,7 +64,7 @@ func processImage(_ image: UIImage, completion: @escaping((Data?) -> Void)) {
     let fileController = FileController()
     let filename = fileController.generateNewFilename()
     let imagePath = fileController.generatePath(filename, "jpg")
-    fileController.saveImage(image, imagePath)
+    // fileController.saveImage(image, imagePath)
     generateOcrJson(cgImage) { data in
         completion(data)
     }
