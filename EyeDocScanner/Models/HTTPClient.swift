@@ -8,7 +8,7 @@
 import Foundation
 
 class HttpClient: ObservableObject {
-    let url = URL(string: "http://172.20.10.3:8000")!
+    let url = URL(string: "http://172.20.10.3:8080")!
     @Published var showAlert = false
     var error: String = "N/A"
     
