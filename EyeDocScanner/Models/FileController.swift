@@ -83,8 +83,7 @@ class FileController: ObservableObject {
     }
     
     func openCSV() {
-        if let url = csvPath {
-            print(url)
+        if let url = userDirectory {
             if let sharedUrl = URL(string: "shareddocuments://\(url.path)") {
                 print(UIApplication.shared.canOpenURL(sharedUrl))
                 if UIApplication.shared.canOpenURL(sharedUrl) {

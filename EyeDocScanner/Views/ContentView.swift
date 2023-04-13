@@ -38,9 +38,15 @@ struct ContentView: View {
                 dismissButton: .default(Text("Got it!"))
             )
         }
-        .alert("CSV file written successfully.", isPresented: $fileController.showAlert) {
-            Button("Dismiss", action: {})
-            Button("Open", action: {fileController.openCSV()}).keyboardShortcut(.defaultAction)
+        .alert(fileController.alertContent, isPresented: $fileController.showAlert) {
+            if fileController.alertContent == "CSV file written successfully." {
+                Button("Dismiss", action: {})
+                Button("Open", action: {fileController.openCSV()}).keyboardShortcut(.defaultAction)
+            }
+            else {
+                Button("Dismiss", action: {})
+            }
+
         }
     }
     
