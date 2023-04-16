@@ -1,5 +1,5 @@
 //
-//  HTTPClient.swift
+//  HttpClient.swift
 //  EyeDocScanner
 //
 //  Created by Tom MERY on 18.03.23.
@@ -8,7 +8,9 @@
 import Foundation
 
 class HttpClient: ObservableObject {
-    let url = URL(string: "https://vitademo.epfl.ch/scanner/")!
+    //let url = URL(string: "https://vitademo.epfl.ch/scanner/")!
+    let url = URL(string: "http://192.168.1.21:8080")!
+    
     @Published var showAlert = false
     var alertContent: String = "N/A"
     

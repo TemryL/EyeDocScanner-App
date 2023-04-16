@@ -1,5 +1,5 @@
 //
-//  JSONExport.swift
+//  JsonExport.swift
 //  EyeDocScanner
 //
 //  Created by Tom MERY on 10.03.23.
@@ -87,3 +87,22 @@ func exportJson(data: [CroppedOcrResults]) -> Data? {
     }
     
 }
+
+func mergeJsonData(jsonDataArray: [Data]) throws -> Data {
+    var mergedArray = [[String: Any]]()
+
+    // Decode the JSON data into arrays of dictionaries and merge them
+    for jsonData in jsonDataArray {
+        if let jsonArray = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [[String: Any]] {
+            mergedArray += jsonArray
+        } else {
+            throw NSError(domain: "mergeJsonDataError", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to decode JSON data"])
+        }
+    }
+
+    // Encode the merged array as JSON data
+    let mergedJsonData = try JSONSerialization.data(withJSONObject: mergedArray, options: .prettyPrinted)
+
+    return mergedJsonData
+}
+

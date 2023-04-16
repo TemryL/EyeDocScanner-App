@@ -43,12 +43,14 @@ struct ScannerView: UIViewControllerRepresentable {
                 return
             }
             
+            var images = [UIImage]()
             for i in 0 ..< scan.pageCount {
                 let image = scan.imageOfPage(at: i)
-                
-                processImage(image) { jsonData in
-                    self.completionHandler(jsonData)
-                }
+                images.append(image)
+            }
+            
+            processImages(images) { jsonData in
+                self.completionHandler(jsonData)
             }
             
             completionHandler(nil)

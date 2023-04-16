@@ -58,15 +58,26 @@ struct OcrRequest {
 
 
 /** Calls functions to save image, perform OCR and save OCR data */
-func processImage(_ image: UIImage, completion: @escaping((Data?) -> Void)) {
-    guard let cgImage = image.cgImage else { return }
-    
-    let fileController = FileController()
-    let filename = fileController.generateNewFilename()
-    let imagePath = fileController.generatePath(filename, "jpg")
-    // fileController.saveImage(image, imagePath)
-    generateOcrJson(cgImage) { data in
-        completion(data)
+func processImages(_ images: [UIImage], completion: @escaping((Data?) -> Void)) {
+    let dispatchGroup = DispatchGroup()
+    var dataArray = [Data]()
+
+    for image in images {
+        guard let cgImage = image.cgImage else { continue }
+
+        dispatchGroup.enter()
+
+        generateOcrJson(cgImage) { result in
+            if let data = result {
+                dataArray.append(data)
+            }
+            dispatchGroup.leave()
+        }
+    }
+
+    dispatchGroup.notify(queue: .main) {
+        let mergedJsonData = try! mergeJsonData(jsonDataArray: dataArray)
+        completion(mergedJsonData)
     }
 }
 

@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		803C716529C60FE40008F52E /* FileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C716429C60FE40008F52E /* FileController.swift */; };
-		805871EC29C5BDDB00897141 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805871EB29C5BDDB00897141 /* HTTPClient.swift */; };
+		805871EC29C5BDDB00897141 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805871EB29C5BDDB00897141 /* HttpClient.swift */; };
 		80B208C429BB875300DB3BC0 /* EyeDocScanner_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B208C329BB875300DB3BC0 /* EyeDocScanner_App.swift */; };
 		80B208C629BB875300DB3BC0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B208C529BB875300DB3BC0 /* ContentView.swift */; };
 		80B208C829BB875400DB3BC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B208C729BB875400DB3BC0 /* Assets.xcassets */; };
 		80B208CB29BB875400DB3BC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B208CA29BB875400DB3BC0 /* Preview Assets.xcassets */; };
 		80B208D429BB8DF800DB3BC0 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B208D329BB8DF800DB3BC0 /* ScannerView.swift */; };
 		80B208D629BB91C300DB3BC0 /* OCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B208D529BB91C300DB3BC0 /* OCR.swift */; };
-		80B208D829BB921500DB3BC0 /* JSONExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B208D729BB921500DB3BC0 /* JSONExport.swift */; };
+		80B208D829BB921500DB3BC0 /* JsonExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B208D729BB921500DB3BC0 /* JsonExport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		803C716329C5F1370008F52E /* EyeDocScanner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EyeDocScanner-Info.plist"; sourceTree = SOURCE_ROOT; };
 		803C716429C60FE40008F52E /* FileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileController.swift; sourceTree = "<group>"; };
-		805871EB29C5BDDB00897141 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		805871EB29C5BDDB00897141 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		80B208C029BB875300DB3BC0 /* EyeDocScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyeDocScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B208C329BB875300DB3BC0 /* EyeDocScanner_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeDocScanner_App.swift; sourceTree = "<group>"; };
 		80B208C529BB875300DB3BC0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -29,7 +29,7 @@
 		80B208CA29BB875400DB3BC0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80B208D329BB8DF800DB3BC0 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		80B208D529BB91C300DB3BC0 /* OCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCR.swift; sourceTree = "<group>"; };
-		80B208D729BB921500DB3BC0 /* JSONExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONExport.swift; sourceTree = "<group>"; };
+		80B208D729BB921500DB3BC0 /* JsonExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonExport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,9 +92,9 @@
 		80B208D229BB891E00DB3BC0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				805871EB29C5BDDB00897141 /* HTTPClient.swift */,
+				805871EB29C5BDDB00897141 /* HttpClient.swift */,
 				80B208D529BB91C300DB3BC0 /* OCR.swift */,
-				80B208D729BB921500DB3BC0 /* JSONExport.swift */,
+				80B208D729BB921500DB3BC0 /* JsonExport.swift */,
 				803C716429C60FE40008F52E /* FileController.swift */,
 			);
 			path = Models;
@@ -174,8 +174,8 @@
 				80B208D429BB8DF800DB3BC0 /* ScannerView.swift in Sources */,
 				80B208C629BB875300DB3BC0 /* ContentView.swift in Sources */,
 				803C716529C60FE40008F52E /* FileController.swift in Sources */,
-				805871EC29C5BDDB00897141 /* HTTPClient.swift in Sources */,
-				80B208D829BB921500DB3BC0 /* JSONExport.swift in Sources */,
+				805871EC29C5BDDB00897141 /* HttpClient.swift in Sources */,
+				80B208D829BB921500DB3BC0 /* JsonExport.swift in Sources */,
 				80B208C429BB875300DB3BC0 /* EyeDocScanner_App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
