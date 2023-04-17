@@ -17,20 +17,18 @@ struct ContentView: View {
     @EnvironmentObject private var client: HttpClient
     
     var body: some View {
-        NavigationView{
-            VStack {
-                Button("Scan",
-                       action: {self.showScannerSheet = true}
-                )
-            }
-            .sheet(isPresented: $showScannerSheet, content: {
-                self.makeScannerView()
-            })
-            .onChange(of: ocrData) { jsonData in
-                if let data = jsonData {
-                    Task {
-                        await makeServerRequest(data: data)
-                    }
+        VStack {
+            Button("Scan",
+                   action: {self.showScannerSheet = true}
+            )
+        }
+        .sheet(isPresented: $showScannerSheet, content: {
+            self.makeScannerView()
+        })
+        .onChange(of: ocrData) { jsonData in
+            if let data = jsonData {
+                Task {
+                    await makeServerRequest(data: data)
                 }
             }
         }
@@ -46,7 +44,7 @@ struct ContentView: View {
             Button("Dismiss", action: {})
             Button("Save") {
                 fileController.writeCSV(fileName:fileName, data: structuredData)
-            }
+            }.keyboardShortcut(.defaultAction)
         }
         .alert(fileController.alertContent, isPresented: $fileController.showAlert) {
             if fileController.alertContent == "File written successfully" {
@@ -56,7 +54,6 @@ struct ContentView: View {
             else {
                 Button("Dismiss", action: {})
             }
-
         }
     }
     

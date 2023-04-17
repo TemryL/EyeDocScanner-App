@@ -23,7 +23,7 @@ class HttpClient: ObservableObject {
             let (data, response) = try await URLSession.shared.upload(for: request, from: jsonData)
             if let response = response as? HTTPURLResponse {
                 if response.statusCode == 480 {
-                    self.alertContent = "Could not find a matching reader. \nCurrently supported softwares: AlconEX500, Sophtalmo."
+                    self.alertContent = "Could not find a matching reader. \nCurrently supported softwares: \n \(SUPPORTED_SOFTWARES.joined(separator: ", "))."
                     self.showAlert = true
                     return nil
                 }
