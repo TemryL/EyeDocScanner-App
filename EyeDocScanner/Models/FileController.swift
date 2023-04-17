@@ -61,23 +61,22 @@ class FileController: ObservableObject {
         }
     }
     
-    func writeCSV(data: [[String: String]]) -> Void {
+    func writeCSV(fileName: String, data: [[String: String]]) -> Void {
         let headers = data.flatMap { $0.keys }.joined(separator: ",")
         let values = data.flatMap { $0.values }.joined(separator: ",")
         let csvString = headers + "\n" + values
         
         if let url = userDirectory {
-            let filename = generateNewFilename()
-            csvPath = generatePath(filename, "csv")
+            csvPath = generatePath(fileName, "csv")
             do {
                 try csvString.write(to: csvPath!, atomically: true, encoding: .utf8)
-                self.alertContent = "CSV file written successfully."
+                self.alertContent = "File written successfully"
                 self.showAlert = true
             }
             catch {
-//                self.alertContent = "Error writting CSV file."
-//                self.showAlert = false
-                print("Error writting CSV file.")
+                self.alertContent = "Error writting file"
+                self.showAlert = true
+                print("Error writting CSV file")
             }
         }
     }

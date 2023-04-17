@@ -9,7 +9,7 @@ import Foundation
 
 class HttpClient: ObservableObject {
     //let url = URL(string: "https://vitademo.epfl.ch/scanner/")!
-    let url = URL(string: "http://192.168.1.21:8080")!
+    let url = URL(string: "http://172.20.10.3:8080")!
     
     @Published var showAlert = false
     var alertContent: String = "N/A"
@@ -23,7 +23,7 @@ class HttpClient: ObservableObject {
             let (data, response) = try await URLSession.shared.upload(for: request, from: jsonData)
             if let response = response as? HTTPURLResponse {
                 if response.statusCode == 480 {
-                    self.alertContent = "Could not find a matching reader."
+                    self.alertContent = "Could not find a matching reader. \nCurrently supported softwares: AlconEX500, Sophtalmo."
                     self.showAlert = true
                     return nil
                 }
@@ -33,13 +33,13 @@ class HttpClient: ObservableObject {
                 return structuredData
             }
             else {
-                self.alertContent = "Could not parse the received data."
+                self.alertContent = "Could not parse the received data. \nTry again."
                 self.showAlert = true
                 return nil
             }
         }
         catch {
-            self.alertContent = "Request to server failed."
+            self.alertContent = "Request to server failed. \nVerify your internet connexion."
             self.showAlert = true
             return nil
         }
