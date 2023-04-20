@@ -9,7 +9,6 @@ import Foundation
 
 class HttpClient: ObservableObject {
     let url = URL(string: "https://vitademo.epfl.ch/scanner/")!
-    //let url = URL(string: "http://172.20.10.3:8080")!
     
     @Published var showAlert = false
     var alertContent: String = "N/A"
