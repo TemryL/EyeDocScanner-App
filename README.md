@@ -2,6 +2,4 @@
 
 ## Demo
 
-https://github.com/TemryL/EyeDocScanner_App/assets/99132608/e6e67611-50e6-4814-a9b3-468bf37d461e
-
-
+https://github.com/TemryL/EyeDocScanner_App/assets/99132608/92df1fc5-e8b7-450d-a171-83ae0423e25d
