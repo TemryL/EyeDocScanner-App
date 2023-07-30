@@ -1,4 +1,4 @@
-# EyeDocScanner_App
+# EyeDocScanner App
 
 ## Demo
 
