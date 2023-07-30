@@ -47,6 +47,19 @@ The concept, inner workings and performance of the system are explored in the fo
 
 https://github.com/TemryL/EyeDocScanner_App/assets/99132608/d5334ff2-6df6-45a9-a082-35e18f23c045
 
-## Limitation and next steps
+## Limitations and Next Steps
 
+While EyeDocScanner performs great in extracting accurate information from well-taken medical report images, it may encounter some limitations when dealing with images that have suboptimal OCR results. In such cases, the resulting CSV document might contain errors and typos. To enhance the app's robustness and address these challenges, we propose the following next steps:
+
+### Multiple Scans and Data Consistency
+
+To improve accuracy, we recommend implementing the ability for users to scan the same medical report multiple times. The app can then extract OCR data from each scan and cross-reference the results. By performing a consensus or voting mechanism, the app can determine the most reliable data for each cell in the CSV file. This approach helps minimize errors caused by occasional OCR inaccuracies.
+
+### Video-Based OCR and Data Aggregation
+
+Another promising avenue is enabling users to capture a video of the medical report rather than taking a single image. The app can then process each frame of the video individually, extracting OCR data for each frame. By aggregating data from multiple frames and applying voting or consensus algorithms, the app can achieve more accurate and consistent results for the final CSV document.
+
+### Error Detection and Correction
+
+Implementing an error detection and correction mechanism within the app can also be valuable. The app can incorporate domain expertise to validate and correct the OCR results. Many of the values obtained from medical reports are expected to follow specific physical properties and constraints, such as correct units, consistent sign conventions, or reasonable order of magnitude. By identifying potential discrepancies or inconsistencies in the extracted data, the app can prompt users to verify or correct specific entries, further improving the overall data quality. 
 
