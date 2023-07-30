@@ -6,7 +6,7 @@ An iOS app that allows users to efficiently scan medical report documents from A
 
 - **Scan Medical Reports**: Easily scan medical report documents using the device's camera or import images from the gallery.
 - **Compatibility**: Supports medical report documents from Alcon EX500 and Sophtalmo software.
-- **Information Retrieval**: Automatically extracts key information such as patient details, examination data, and diagnosis.
+- **Information Retrieval**: Automatically extracts key information such as patient details and examination data.
 - **CSV Export**: Generates a structured and normalized CSV document containing the extracted data.
 
 ## Installation
@@ -33,12 +33,15 @@ To get started with the app, follow these instructions:
 - Compatible with iPhone and iPad
 
 ## Documentation
-This app extracts OCR data from the scanned documents in JSON format and sends it to the [EyeDocScanner API](https://github.com/TemryL/EyeDocScanner_API) through HTTP requests. The API process the OCR data and return the structured data in JSON format to the IOS app. Finally the results are stored locally on the iPhone in CSV format.
+This app extracts OCR data from the scanned document in JSON format and sends it to the [EyeDocScanner API](https://github.com/TemryL/EyeDocScanner_API) through HTTP requests. The API process the OCR data and return the structured data in JSON format to the IOS app. Finally, the results are stored locally on the iPhone in CSV format.
 
-The concept, inner working and performance of the system are explored in the following presentation:  
+The concept, inner workings and performance of the system are explored in the following presentation:  
 [S. Pham-Ba, *VITA'App, Picture to Structured text, Tech meeting*, 2023](https://github.com/TemryL/EyeDocScanner_API/files/12208931/2023.03.06.-.VITA.App.Tech.meeting.pdf).
 
 ## Demo
 
 https://github.com/TemryL/EyeDocScanner_App/assets/99132608/d5334ff2-6df6-45a9-a082-35e18f23c045
+
+## Limitation and next steps
+
 
