@@ -1,4 +1,3 @@
-
 <p align="center">
   <img src="https://github.com/TemryL/EyeDocScanner_App/assets/99132608/9086edf1-802c-4c1b-a352-fb4bd27d1d3a" alt="EyeDocScanner App Icon" width="100" height="100" style="border-radius: 50%;">
 </p>
