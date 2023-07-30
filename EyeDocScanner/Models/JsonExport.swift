@@ -75,10 +75,6 @@ func exportJson(data: [CroppedOcrResults]) -> Data? {
     do {
         let jsonEncoder = JSONEncoder()
         let jsonData = try jsonEncoder.encode(data)
-//        let jsonString = String(data: jsonData, encoding: .utf8)!
-//        let path = to.path
-//        try jsonString.write(toFile: path, atomically: true, encoding: String.Encoding.utf8)
-//        print("File written successfully")
         return jsonData
         
     } catch {
