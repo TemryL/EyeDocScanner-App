@@ -1,14 +1,13 @@
 # EyeDocScanner App
 
-Welcome to EyeDocScanner, an iOS app that allows users to efficiently scan medical report documents from Alcon EX500 or Sophtalmo software. The app automatically extracts relevant information and presents it in a structured and normalized CSV document.
+An iOS app that allows users to efficiently scan medical report documents from Alcon EX500 or Sophtalmo software. The app automatically extracts relevant information and presents it in a structured and normalized CSV document.
 
 ## Features
 
 - **Scan Medical Reports**: Easily scan medical report documents using the device's camera or import images from the gallery.
 - **Compatibility**: Supports medical report documents from Alcon EX500 and Sophtalmo software.
 - **Information Retrieval**: Automatically extracts key information such as patient details, examination data, and diagnosis.
-- **CSV Export**: Generates a structured and normalized CSV document containing the extracted data for easy integration into other applications.
-- **Privacy and Security**: Ensures the confidentiality of sensitive medical information and follows best practices for data security.
+- **CSV Export**: Generates a structured and normalized CSV document containing the extracted data.
 
 ## Installation
 
@@ -34,16 +33,10 @@ To get started with the app, follow these instructions:
 - Compatible with iPhone and iPad
 
 ## Documentation
+This app extracts OCR data from the scanned documents in JSON format and sends it to the [EyeDocScanner API](https://github.com/TemryL/EyeDocScanner_API) through HTTP requests. The API process the OCR data and return the structured data in JSON format to the IOS app. Finally the results are stored locally on the iPhone in CSV format.
 
-For detailed information about the app's usage, APIs, and development process, please refer to the [documentation](docs/README.md) provided in the "docs" directory.
-
-## Support
-
-If you encounter any issues or have questions regarding EyeDocScanner, please feel free to [contact our support team](mailto:support@eyedocscannerapp.com).
-
----
-
-Thank you for choosing EyeDocScanner! We hope the app simplifies and streamlines the process of scanning and extracting medical report information for you. If you have any feedback or suggestions, we'd love to hear from you. Happy scanning!
+The concept, inner working and performance of the system are explored in the following presentation:  
+[S. Pham-Ba, *VITA'App, Picture to Structured text, Tech meeting*, 2023](https://github.com/TemryL/EyeDocScanner_API/files/12208931/2023.03.06.-.VITA.App.Tech.meeting.pdf).
 
 ## Demo
 
