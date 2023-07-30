@@ -2,6 +2,8 @@
 
 An iOS app that allows users to efficiently scan medical report documents from Alcon EX500 or Sophtalmo software. The app automatically extracts relevant information and presents it in a structured and normalized CSV document.
 
+![icon](https://github.com/TemryL/EyeDocScanner_App/assets/99132608/9086edf1-802c-4c1b-a352-fb4bd27d1d3a)
+
 ## Features
 
 - **Scan Medical Reports**: Easily scan medical report documents using the device's camera or import images from the gallery.
