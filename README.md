@@ -63,3 +63,7 @@ Another promising avenue is enabling users to capture a video of the medical rep
 
 Implementing an error detection and correction mechanism within the app can also be valuable. The app can incorporate domain expertise to validate and correct the OCR results. Many of the values obtained from medical reports are expected to follow specific physical properties and constraints, such as correct units, consistent sign conventions, or reasonable order of magnitude. By identifying potential discrepancies or inconsistencies in the extracted data, the app can prompt users to verify or correct specific entries, further improving the overall data quality. 
 
+### Support Other Software and Add Android Compatibility
+
+Expanding EyeDocScanner's compatibility to support other software and diverse medical document templates. To achieve this, one could simply implement new readers in the EyeDocScanner API. Also, the final step should be to make the app compatible with Android. The current API can be used also for the Android version if the OCR data are extracted in the same format.
+
